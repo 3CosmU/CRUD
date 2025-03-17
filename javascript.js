@@ -1,13 +1,13 @@
-/* 
-$(function(){
-   $(".mascara").maskMoney({
-      prefix: 'R$ ',
-      allowNegative: true,
-      thousands: '.',
-      decimal: ','
-   });
+
+$(function () {
+    $(".mascara").maskMoney({
+        prefix: 'R$ ',
+        allowNegative: true,
+        thousands: '.',
+        decimal: ','
+    });
 });
- */
+
 
 function Adicionar() {
     /* Pegar valores dos campos */
@@ -17,8 +17,8 @@ function Adicionar() {
 
     /*  Validação, serve pra validar 3 campos,codigoInput, nomeInput, precoInput 
      (a validação é o processo de verificar se os dados que você recebe (seja de um usuário, de um arquivo, de um banco de dados, etc.) estão corretos e seguem as regras que você definiu. É como um porteiro que verifica se as pessoas que querem entrar em um prédio têm permissão e se comportam de acordo com as regras do local) */
-    if (codigoInput === "") { }
-    if (nomeInput === "") { }
+
+
     precoInput = parseFloat(precoInput);
     if (isNaN(precoInput) || precoInput <= 0) { }
 
@@ -30,7 +30,7 @@ function Adicionar() {
     var celulaCodigo = linha.insertCell();
     var celulaNome = linha.insertCell();
     var celulaPreco = linha.insertCell();
-    var celulaAcoes = linha.insertCell(); 
+    var celulaAcoes = linha.insertCell();
     celulaCodigo.textContent = codigoInput;
     celulaNome.textContent = nomeInput;
     celulaPreco.textContent = precoInput.toFixed(2);
@@ -58,12 +58,12 @@ function Adicionar() {
             const nome = celulas[1].textContent;
             const preco = celulas[2].textContent;
 
-           /*  Substitui as células por campos de texto */
+            /*  Substitui as células por campos de texto */
             celulas[0].innerHTML = `<input type="text" value="${codigo}">`;
             celulas[1].innerHTML = `<input type="text" value="${nome}">`;
             celulas[2].innerHTML = `<input type="text" value="${preco}">`;
 
-           /* Adiciona botão Salva depois que termina a edicao */
+            /* Adiciona botão Salva depois que termina a edicao */
             celulas[3].innerHTML = '<button class="btn btn-success btn-sm salvar">Salvar</button>';
         } else if (event.target.classList.contains('salvar')) {
             const linha = event.target.closest('tr');
@@ -74,7 +74,7 @@ function Adicionar() {
             const novoNome = celulas[1].querySelector('input').value;
             const novoPreco = celulas[2].querySelector('input').value;
 
-           /* atualizar a lista com os valores novos qye foram editados */
+            /* atualizar a lista com os valores novos qye foram editados */
             celulas[0].textContent = novoCodigo;
             celulas[1].textContent = novoNome;
             celulas[2].textContent = novoPreco;
